@@ -40,7 +40,7 @@ done
 is_plugin() {
   local base_dir=$1
   local name=$2
-  test -f $base_dir/plugins/$name/$name.plugin.sh >&/dev/null \
+  test -f $base_dir/plugins/$name/$name.plugin.sh \
     || test -f $base_dir/plugins/$name/_$name
 }
 # Add all defined plugins to fpath. This must be done
@@ -56,7 +56,7 @@ done
 is_completion() {
   local base_dir=$1
   local name=$2
-  test -f $base_dir/completions/$name/$name.completion.sh >&/dev/null
+  test -f $base_dir/completions/$name/$name.completion.sh
 }
 # Add all defined completions to fpath. This must be done
 # before running compinit.
@@ -71,7 +71,7 @@ done
 is_alias() {
   local base_dir=$1
   local name=$2
-  test -f $base_dir/aliases/$name/$name.aliases.sh >&/dev/null
+  test -f $base_dir/aliases/$name/$name.aliases.sh
 }
 # Add all defined completions to fpath. This must be done
 # before running compinit.
